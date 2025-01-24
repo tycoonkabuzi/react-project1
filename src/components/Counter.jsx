@@ -4,9 +4,6 @@ import Step from "./Step";
 const Counter = () => {
   const [stepValue, setStepValue] = useState(0);
   const [count, setCount] = useState(0);
-  useEffect(() => {
-    setCount(Math.floor(Math.random() * 100));
-  }, []);
 
   const updateCounter = (action, stepValue) => {
     if (action == "add") {
@@ -24,7 +21,7 @@ const Counter = () => {
         Counter:<span className="counter-value">{count}</span>
       </p>
       <button onClick={() => updateCounter("add", stepValue)}>
-        add {stepValue}
+        add {stepValue <= 0 ? "" : stepValue}
       </button>
       <button onClick={() => updateCounter("reInit", stepValue)}>ReInit</button>
       <button onClick={() => updateCounter("reset", stepValue)}>Reset</button>

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "../Step.css";
 const Step = ({ stepValue, setStepValue }) => {
   const handleInputChange = (e) => {
